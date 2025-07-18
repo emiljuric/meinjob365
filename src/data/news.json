@@ -1,0 +1,20 @@
+[
+  {
+    "id": "2024-07-15-ki-stammtisch",
+    "title": "KI-Stammtisch: Recruiting Trends 2024",
+    "date": "2024-07-15",
+    "excerpt": "Sažetak vijesti...",
+    "image": "/images/ki-event.jpg",
+    "tags": ["#KI", "#Recruiting"],
+    "htmlFile": "/aktuelnosti/2024-07-15-ki-stammtisch.html"
+  },
+  {
+    "id": "2024-07-22-google-update",
+    "title": "Novi Google algoritam",
+    "date": "2024-07-22",
+    "excerpt": "Sažetak o Google promjenama...",
+    "image": "/images/google-update.jpg",
+    "tags": ["#SEO"],
+    "htmlFile": "/aktuelnosti/2024-07-22-google-update.html"
+  }
+]

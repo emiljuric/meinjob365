@@ -121,11 +121,13 @@ h2 {
 }
 
 p, ul {
-  font-size: 1.15em;
-  line-height: 1.7;
-  margin-bottom: 1.5em;
-  text-align: center;
-  color: #676767
+  list-style-type: none; /* Ovo uklanja tačkice */
+  padding-left: 0; /* Ovo uklanja padding */
+  text-align: center; /* Zadržava centrirano poravnanje */
+  color: #676767; /* Zadržava postojeću boju */
+  font-size: 1.15em; /* Zadržava postojeću veličinu fonta */
+  line-height: 1.7; /* Zadržava postojeći line-height */
+  margin-bottom: 1.5em; /* Zadržava postojeći margin */
 }
 
 ul {
@@ -206,19 +208,63 @@ footer {
 }
 
 .nav-link {
-  display: inline-block;
-  margin-top: 20px;
-  font-size: 1em;
+  color: #676767;
   text-decoration: none;
-  color: #0077b5;
   font-weight: bold;
   transition: color 0.3s;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
 }
 
 .nav-link:hover {
   color: #005983;
+  border-bottom-color: #005983;
 }
-  </style>
+
+/* New styles for the layout */
+.linkedin-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.left-aligned-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+/* Updated desktop-only behavior */
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 601px) {
+  .desktop-only {
+    display: inline-block;
+  }
+}
+.left-aligned-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+  margin-top: 100px;
+}
+
+@media (min-width: 601px) {
+  .left-aligned-links {
+    margin-left: -20px;
+    padding-left: 20px;
+    width: calc(100% + 40px);
+    position: relative; left: -300px;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -262,11 +308,16 @@ footer {
       <li>Startups & Personaldienstleister</li>
       <li>Zeitarbeitsfirmen & Agenturen</li>
     </ul>
-
-    <a class="button desktop-only" href="https://www.linkedin.com/in/emil-juric/" target="_blank">
-      Verbinde dich mit mir auf LinkedIn
-    </a>
-    <a class="nav-link" href="ueber-uns.html">Über uns</a>
+    
+    <div class="linkedin-wrapper">
+  <a class="button desktop-only" href="https://www.linkedin.com/in/emil-juric/" target="_blank" rel="noopener noreferrer">
+    LinkedIn
+  </a>
+</div>
+<div class="left-aligned-links" style="margin-left: -20px; width: calc(100% + 40px);">
+  <a class="nav-link" href="/ueber-uns" title="Über meinjob365">Über uns</a>
+  <a class="nav-link" href="/aktuelles" title="Aktuelle Neuigkeiten">Aktuelles</a>
+</div>
   </main>
   
   <footer>
