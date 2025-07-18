@@ -3,136 +3,219 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>meinjob365.de – Kommt bald</title>
-  <meta name="description" content="meinjob365 – Die neue Jobplattform für transparente Stellenanzeigen und faire Sichtbarkeit. Offizieller Start in Q1 2026.">
-  <meta property="og:title" content="meinjob365 – Kommt bald">
+  <meta http-equiv="content-language" content="de">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Emil Juric">
+  <meta name="publisher" content="meinjob365">
+  <meta name="description" content="Entdecke meinjob365 – Die neue, benutzerfreundliche Jobbörse für KMUs, Kommunen, Zeitarbeit und mehr. Starte mit uns in eine transparente Zukunft der Jobanzeigen.">
+  <meta name="keywords" content="Jobbörse, Stellenangebote, Arbeit, Jobportal, Job, Stelle, Karriere, Jobs Deutschland, meinjob365">
+  <meta property="business:business_tag" content="Jobportal, Stellenmarkt">
+  <link rel="canonical" href="https://meinjob365.de/">
+  <link rel="alternate" hreflang="de" href="https://meinjob365.de">
+  <link rel="alternate" hreflang="en" href="https://meinjob365.com">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="meinjob365">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="meinjob365 – Die innovative Jobbörse für Deutschland (Launch 2026)">
   <meta property="og:description" content="Die neue Jobplattform für KMUs, Kommunen und Startups.">
   <meta property="og:image" content="https://meinjob365.de/images/meinjob365_logo.png">
   <meta property="og:url" content="https://meinjob365.de">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="meinjob365 – Kommt bald">
+  <meta name="twitter:description" content="Die neue Jobplattform für KMUs, Kommunen und Startups.">
+  <meta name="twitter:image" content="https://meinjob365.de/images/meinjob365_logo.png">
+
+  <title>meinjob365 – Die innovative Jobbörse für Deutschland (Launch 2026)</title>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "meinjob365",
+    "url": "https://meinjob365.de",
+    "logo": "https://meinjob365.de/images/meinjob365_logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/emil-juric/",
+      "https://twitter.com/meinjob365"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: WebSite SearchAction -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://meinjob365.de/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://meinjob365.de/suche?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Optional future AI Config -->
+  <script>
+    window.AI_CONFIG = {
+      futureIntegration: true,
+      plannedFeatures: ["job-recommendations", "chatbot"]
+    };
+  </script>
+
   <style>
     * {
-      box-sizing: border-box;
-    }
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #222;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 5px;
-    }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
 
-    header img {
-      height: 40px;
-    }
+header img {
+  height: 40px;
+}
 
-    main {
-      flex: 1;
+main {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px 20px 20px;
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
-    }
+  padding: 40px 20px;
+}
 
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 0.5em;
-      color: #222;
-    }
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 0.5em;
+  color: #222;
+}
 
-    p {
-      font-size: 1.15em;
-      line-height: 1.7;
-      margin-bottom: 1.5em;
-      max-width: 1000px;
-      text-align: left;
-    }
+h2 {
+  font-size: 1.5em;
+  margin-top: 2em;
+}
 
-    .button {
-      background-color: #0077b5;
-      color: white;
-      padding: 12px 24px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
+p, ul {
+  font-size: 1.15em;
+  line-height: 1.7;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
 
-    .button:hover {
-      background-color: #005983;
-    }
+ul {
+  padding-left: 20px;
+}
 
-    footer {
-      text-align: center;
-      padding: 10px;
-      font-size: 0.9em;
-      color: #aaa;
-      background: #f9f9f9;
-    }
+.button {
+  background-color: #0077b5;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
 
-    .mobile-only {
-      display: none;
-    }
+.button:hover {
+  background-color: #005983;
+}
 
-    .desktop-only {
-      display: inline-block;
-    }
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #aaa;
+  background: #f9f9f9;
+  margin-top: auto;
+  width: 100%;
+}
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.8em;
-      }
+.mobile-only {
+  display: none;
+}
 
-      p {
-        font-size: 1em;
-        text-align: left;
-      }
+.desktop-only {
+  display: inline-block;
+}
 
-      .button {
-        padding: 10px 20px;
-      }
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8em;
+  }
 
-      .mobile-only {
-        display: inline-block;
-        font-size: 0.9em;
-        padding: 8px 16px;
-        margin-top: 10px;
-      }
+  p {
+    font-size: 1em;
+  }
 
-      .desktop-only {
-        display: none;
-      }
+  .button {
+    padding: 10px 20px;
+  }
 
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+  .mobile-only {
+    display: inline-block;
+    font-size: 0.9em;
+    padding: 8px 16px;
+    margin-top: 10px;
+  }
 
-      header img {
-        margin-bottom: 5px;
-      }
-    }
+  .desktop-only {
+    display: none;
+  }
 
-    @media (max-height: 650px) {
-      main {
-        justify-content: flex-start;
-        padding-top: 40px;
-      }
-    }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header img {
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-height: 650px) {
+  main {
+    justify-content: flex-start;
+    padding-top: 40px;
+  }
+}
+
+.nav-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1em;
+  text-decoration: none;
+  color: #0077b5;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #005983;
+}
   </style>
 </head>
 <body>
@@ -145,6 +228,8 @@
   </header>
 
   <main>
+    <h1><strong><span style="color: rgb(255, 102, 0);">mein</span><span style="color: rgb(36, 98, 225);">job365-Kommt bald!</span></strong> </h1>
+
     <p>
       Eine neue Plattform für faire und transparente Jobanzeigen –<br>
       für kleine und mittelständische Unternehmen, Großkonzerne, Städte, Kommunen, soziale Einrichtungen, Personaldienstleister, Zeitarbeitsfirmen und Startups.<br><br>
@@ -167,12 +252,23 @@
       <em>Hinweis: Dieses Projekt befindet sich noch in der nicht-kommerziellen Vorbereitungsphase.</em>
     </p>
 
+    <h2>Für wen ist <strong><span style="color: rgb(255, 102, 0);">mein</span><span style="color: rgb(36, 98, 225);">job365</span></strong> gedacht?</h2>
+    <ul>
+      <li>Kleine Unternehmen & Mittelstand</li>
+      <li>Großkonzerne & Industrie</li>
+      <li>Städte, Kommunen & soziale Einrichtungen</li>
+      <li>Startups & Personaldienstleister</li>
+      <li>Zeitarbeitsfirmen & Agenturen</li>
+    </ul>
+
     <a class="button desktop-only" href="https://www.linkedin.com/in/emil-juric/" target="_blank">
       Verbinde dich mit mir auf LinkedIn
     </a>
+    <a class="nav-link" href="ueber-uns.html">Über uns</a>
   </main>
-
+  
   <footer>
+  
     © 2025 meinjob365 – Alle Rechte vorbehalten
   </footer>
 
