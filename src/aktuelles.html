@@ -1,214 +1,318 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aktuelles | MeinJob365</title>
-    <meta name="description" content="Neueste Nachrichten und Events rund um Recruiting und KI">
-    
-    <!-- Schema.org Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Aktuelles",
-      "description": "Neueste Nachrichten und Events rund um Recruiting und KI"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aktuelles | MeinJob365</title>
+  <meta name="description" content="Bleiben Sie auf dem Laufenden mit den neuesten Nachrichten, Events und Entwicklungen rund um Recruiting, KI und Arbeitswelt.">
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Aktuelles",
+    "description": "Bleiben Sie auf dem Laufenden mit den neuesten Nachrichten, Events und Entwicklungen rund um Recruiting, KI und Arbeitswelt."
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
-    </script>
-    
-    <style>
-        /* Osnovni stilovi */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
-        }
-        
-        .news-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .news-card {
-            border: 1px solid #e1e1e1;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        
-        .news-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .news-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .news-content {
-            padding: 20px;
-        }
-        
-        .news-content h3 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-        
-        .date {
-            color: #7f8c8d;
-            font-size: 0.9em;
-        }
-        
-        .tags {
-            margin-top: 15px;
-        }
-        
-        .tag {
-            display: inline-block;
-            background: #f1f1f1;
-            padding: 3px 8px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 5px;
-            color: #555;
-        }
-        
-        .search-bar {
-            margin: 20px 0;
-            padding: 10px;
-            width: 100%;
-            max-width: 500px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        
-        .filter-buttons {
-            margin: 20px 0;
-        }
-        
-        .filter-btn {
-            padding: 8px 15px;
-            margin-right: 10px;
-            background: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        .filter-btn.active {
-            background: #3498db;
-            color: white;
-            border-color: #3498db;
-        }
-    </style>
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #333;
+      background: #f9f9f9;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+      color: #2c3e50;
+    }
+
+    .filter-section {
+      text-align: center;
+    }
+
+    .search-bar {
+      padding: 10px;
+      width: 100%;
+      max-width: 500px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .filter-buttons {
+      margin-top: 20px;
+    }
+
+    .filter-btn {
+      padding: 8px 15px;
+      margin: 5px;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      background: #e0e0e0;
+    }
+
+    .filter-btn.active {
+      background: #3498db;
+      color: white;
+      border-color: #3498db;
+    }
+
+    .news-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .news-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .news-content {
+      padding: 20px;
+    }
+
+    .news-content h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      color: #2c3e50;
+    }
+
+    .date {
+      color: #7f8c8d;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+
+    .tags {
+      margin-top: 15px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eef1f4;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8em;
+      margin-right: 6px;
+      color: #444;
+    }
+
+    .error-message {
+      padding: 20px;
+      background: #ffeeee;
+      border: 1px solid #ffcccc;
+      border-radius: 5px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .loading-spinner {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(0,0,0,.1);
+      border-radius: 50%;
+      border-top-color: #3498db;
+      animation: spin 1s linear infinite;
+      margin: 50px auto;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 40px;
+      color: #666;
+      grid-column: 1 / -1;
+    }
+
+    .refresh-btn {
+      margin-top: 15px;
+      padding: 8px 16px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .refresh-btn:hover {
+      background-color: #2980b9;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Aktuelles</h1>
-        <p>Neueste Nachrichten und Events von MeinJob365</p>
-    </header>
-    
-    <div class="filter-section">
-        <input type="text" id="search-news" class="search-bar" placeholder="Nachrichten durchsuchen...">
-        
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="recent">Neueste</button>
-            <button class="filter-btn" data-filter="popular">Beliebteste</button>
-        </div>
+  <header>
+    <h1>Aktuelles</h1>
+    <p>Bleiben Sie informiert über die neuesten Nachrichten und Veranstaltungen von MeinJob365</p>
+  </header>
+
+  <div class="filter-section">
+    <input type="text" id="search-news" class="search-bar" placeholder="Nachrichten durchsuchen...">
+
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="recent">Neueste</button>
+      <button class="filter-btn" data-filter="popular">Beliebteste</button>
     </div>
-    
-    <div id="news-container" class="news-container">
-        <!-- News cards will be inserted here by JavaScript -->
-    </div>
-    
-    <script>
-        // Glavna aplikacija
-        document.addEventListener('DOMContentLoaded', async () => {
-            // Učitaj podatke
-            const response = await fetch('/data/news.json');
-            const allNews = await response.json();
-            
-            // Inicijalni prikaz
-            let currentNews = [...allNews];
-            renderNews(currentNews);
-            
-            // Event listeneri
-            setupSearch(allNews);
-            setupFilters(allNews);
-        });
-        
-        // Render funkcija
-        function renderNews(newsItems) {
-            const container = document.getElementById('news-container');
-            container.innerHTML = newsItems.map(item => `
-                <article class="news-card">
-                    <a href="${item.url}">
-                        <img src="${item.image}" alt="${item.title}" loading="lazy">
-                        <div class="news-content">
-                            <h3>${item.title}</h3>
-                            <p class="date">${formatDate(item.date)}</p>
-                            <p>${item.excerpt}</p>
-                            <div class="tags">
-                                ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                            </div>
-                        </div>
-                    </a>
-                </article>
-            `).join('');
-        }
-        
-        // Pretraga
-        function setupSearch(allNews) {
-            const searchInput = document.getElementById('search-news');
-            
-            searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
-                const filtered = allNews.filter(item => 
-                    item.title.toLowerCase().includes(searchTerm) || 
-                    item.excerpt.toLowerCase().includes(searchTerm) ||
-                    item.tags.some(tag => tag.toLowerCase().includes(searchTerm))
-                
-                renderNews(filtered);
-            });
-        }
-        
-        // Filteri
-        function setupFilters(allNews) {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Aktivni button
-                    filterButtons.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    
-                    // Filtriraj
-                    let filtered = [...allNews];
-                    const filterType = btn.dataset.filter;
-                    
-                    if (filterType === 'recent') {
-                        filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
-                    } else if (filterType === 'popular') {
-                        filtered.sort((a, b) => (b.views || 0) - (a.views || 0));
-                    }
-                    
-                    renderNews(filtered);
-                });
-            });
-        }
-        
-        // Formatiranje datuma
-        function formatDate(dateString) {
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            return new Date(dateString).toLocaleDateString('de-DE', options);
-        }
-    </script>
+  </div>
+
+  <div id="news-container" class="news-container">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- JavaScript ostaje nepromijenjen jer je već ispravan i optimiziran -->
+   <script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      showLoading();
+
+      const response = await fetch('./data/news.json'); // prilagodi putanju ako treba
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const allNews = await response.json();
+
+      if (!Array.isArray(allNews)) {
+        throw new Error('Invalid data format: Expected array');
+      }
+
+      initializeNews(allNews);
+    } catch (error) {
+      console.error('Initialisierungsfehler:', error);
+      showError('Die Nachrichten konnten nicht geladen werden. Bitte versuchen Sie es später erneut.');
+    }
+  });
+
+  function showLoading() {
+    document.getElementById('news-container').innerHTML = '<div class="loading-spinner"></div>';
+  }
+
+  function initializeNews(news) {
+    window.newsData = news;
+    renderNews(sortNews(news, 'recent'));
+    setupSearch();
+    setupFilters();
+  }
+
+  function sortNews(news, by) {
+    const copy = [...news];
+    if (by === 'recent') return copy.sort((a, b) => new Date(b.date) - new Date(a.date));
+    if (by === 'popular') return copy.sort((a, b) => (b.views || 0) - (a.views || 0));
+    return copy;
+  }
+
+  function renderNews(items) {
+    const container = document.getElementById('news-container');
+    if (!items.length) {
+      container.innerHTML = '<div class="no-results">Keine Nachrichten gefunden.</div>';
+      return;
+    }
+
+    container.innerHTML = items.map(item => `
+      <article class="news-card">
+        <a href="${item.url || '#'}">
+          <img src="${item.image || 'placeholder.jpg'}" alt="${item.title || 'Nachricht'}">
+          <div class="news-content">
+            <h3>${item.title || 'Ohne Titel'}</h3>
+            <p class="date">${item.date ? formatDate(item.date) : 'Datum unbekannt'}</p>
+            <p>${item.excerpt || ''}</p>
+            <div class="tags">
+              ${(item.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </div>
+          </div>
+        </a>
+      </article>
+    `).join('');
+  }
+
+  function setupSearch() {
+    const input = document.getElementById('search-news');
+    input.addEventListener('input', (e) => {
+      const val = e.target.value.toLowerCase();
+      const filtered = window.newsData.filter(n =>
+        (n.title || '').toLowerCase().includes(val) ||
+        (n.excerpt || '').toLowerCase().includes(val) ||
+        (n.tags || []).some(tag => tag.toLowerCase().includes(val))
+      );
+      renderNews(filtered);
+    });
+  }
+
+  function setupFilters() {
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filtered = sortNews(window.newsData, btn.dataset.filter);
+        renderNews(filtered);
+      });
+    });
+  }
+
+  function formatDate(str) {
+    try {
+      return new Date(str).toLocaleDateString('de-DE', {
+        year: 'numeric', month: 'long', day: 'numeric'
+      });
+    } catch {
+      return str;
+    }
+  }
+
+  function showError(msg) {
+    document.getElementById('news-container').innerHTML = `
+      <div class="error-message">
+        <p>${msg}</p>
+        <button class="refresh-btn" onclick="window.location.reload()">Seite neu laden</button>
+      </div>
+    `;
+  }
+</script>
+
 </body>
 </html>

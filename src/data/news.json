@@ -1,20 +1,20 @@
 [
   {
-    "id": "2024-07-15-ki-stammtisch",
-    "title": "KI-Stammtisch: Recruiting Trends 2024",
-    "date": "2024-07-15",
-    "excerpt": "Sažetak vijesti...",
-    "image": "/images/ki-event.jpg",
+    "id": "2025-07-24-ki-stammtisch",
+    "title": "KI-Stammtisch: Recruiting-Trends 2025",
+    "date": "2025-07-24",
+    "excerpt": "Daniel Müller Experte für Zeitarbeit & Unternehmenswachstum Gründer des erfolgreichen Podcasts Liebe Zeitarbeit",
+    "image": "/images/stammtisch.webp",
     "tags": ["#KI", "#Recruiting"],
-    "htmlFile": "/aktuelnosti/2024-07-15-ki-stammtisch.html"
+    "url": "/public/aktuelles/stammtisch_2025/stammtisch.html"
   },
   {
-    "id": "2024-07-22-google-update",
-    "title": "Novi Google algoritam",
-    "date": "2024-07-22",
-    "excerpt": "Sažetak o Google promjenama...",
-    "image": "/images/google-update.jpg",
+    "id": "2025-07-23-TOP CEO Leadership",
+    "title": "TOP CEO Leadership",
+    "date": "2025-07-23",
+    "excerpt": "Doreen Hegemann bringt 25 Jahre Führungserfahrung in DAX-30 Unternehmen mit, hat zwei Unternehmen gegründet und über 100 CEOs dabei geholfen, strategisch zu führen, produktiver zu arbeiten und nachhaltig zu skalieren.",
+    "image": "/images/ceoleadership.webp",
     "tags": ["#SEO"],
-    "htmlFile": "/aktuelnosti/2024-07-22-google-update.html"
+    "url": "/public/aktuelles/stammtisch_2025/topceoleadership.html"
   }
 ]
