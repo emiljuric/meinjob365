@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Datenschutz | meinjob365</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #FF6600; border-bottom: 2px solid #2462E1; padding-bottom: 5px; }
+        h2 { color: #2462E1; margin-top: 25px; }
+        h3 { color: #444; margin-top: 20px; }
+        a { color: #2462E1; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background: #f5f5f5; padding: 2px 4px; border-radius: 3px; }
+        .cookie-banner {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: #f8f9fa; padding: 15px; box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000; display: flex; flex-wrap: wrap; gap: 10px;
+            align-items: center; justify-content: center;
+        }
+        .cookie-banner button {
+            background: #2462E1; color: white; border: none;
+            padding: 8px 16px; border-radius: 4px; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Datenschutzerklärung</h1>
+    <p><em>Stand: Juli 2024</em></p>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>
+        Emil Juric<br>
+        Feldstraße 110<br>
+        63071 Offenbach am Main<br>
+        E-Mail: <a href="mailto:juricemil@gmail.com">juricemil@gmail.com</a>
+    </p>
+
+    <h2>2. Datenverarbeitung</h2>
+    
+    <h3>2.1 Cloudflare Analytics</h3>
+    <p>
+        Wir verwenden Cloudflare Web Analytics zur Analyse der Besucherströme. Dabei werden:
+    </p>
+    <ul>
+        <li><strong>Anonymisierte IP-Adressen</strong> (letztes Oktett entfernt)</li>
+        <li><strong>Seitenaufrufe</strong> ohne Personenbezug</li>
+        <li><strong>Technische Metriken</strong> (Ladezeiten, Browser-Typ)</li>
+    </ul>
+    <p>
+        Die Daten werden <strong>nach 12 Monaten</strong> automatisch gelöscht und nicht an Dritte weitergegeben.
+    </p>
+
+    <h3>2.2 Cookies</h3>
+    <p>
+        Folgende Cookies werden verwendet:
+    </p>
+    <ul>
+        <li><code>_cf_bm</code> (30 Min, Bot-Erkennung)</li>
+        <li><code>cf_clearance</code> (1 Jahr, Sicherheitscheck)</li>
+        <li><code>__cflb</code> (1 Tag, Lastenausgleich)</li>
+    </ul>
+
+    <h2>3. Rechtsgrundlage</h2>
+    <p>
+        Die Verarbeitung erfolgt auf Grundlage von <strong>Art. 6 Abs. 1 lit. f DSGVO</strong> (berechtigtes Interesse an Website-Optimierung).
+    </p>
+
+    <h2>4. Ihre Rechte</h2>
+    <p>
+        Sie haben das Recht auf:
+    </p>
+    <ul>
+        <li>Auskunft über gespeicherte Daten</li>
+        <li>Widerspruch gegen die Verarbeitung</li>
+        <li>Löschung der Daten</li>
+    </ul>
+    <p>
+        Kontakt: <a href="mailto:juricemil@gmail.com">juricemil@gmail.com</a>
+    </p>
+
+    <div id="cookieConsentBanner" class="cookie-banner" style="display: none;">
+        <p>Wir verwenden Cloudflare Analytics zur Website-Verbesserung. Alle Daten sind anonymisiert.</p>
+        <button onclick="acceptCookies()">Akzeptieren</button>
+        <a href="/datenschutz" style="margin-left: 15px;">Mehr erfahren</a>
+    </div>
+
+    <script>
+        // Cookie Consent Management
+        if(!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookieConsentBanner').style.display = 'flex';
+        }
+        
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookieConsentBanner').style.display = 'none';
+            // Aktiviraj Cloudflare Analytics nakon pristanka
+            loadCloudflareAnalytics();
+        }
+
+        function loadCloudflareAnalytics() {
+            if(localStorage.getItem('cookiesAccepted')) {
+                var script = document.createElement('script');
+                script.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+                script.defer = true;
+                script.setAttribute('data-cf-beacon', JSON.stringify({
+                    token: "2bd16794874b43a18c753e74b16c28f5",
+                    spa: true,
+                    anonymizeIP: true
+                }));
+                document.body.appendChild(script);
+            }
+        }
+
+        // Učitaj odmah ako je već prihvaćeno
+        window.addEventListener('DOMContentLoaded', function() {
+            loadCloudflareAnalytics();
+        });
+    </script>
+</body>
+</html>
