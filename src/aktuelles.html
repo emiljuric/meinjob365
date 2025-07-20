@@ -181,6 +181,30 @@
     .refresh-btn:hover {
       background-color: #2980b9;
     }
+
+    /* Event Disclaimer Styles */
+    .event-disclaimer {
+      margin-top: 15px;
+      padding: 10px;
+      background: #fff8e1;
+      border-left: 3px solid #ffc107;
+      font-size: 0.85em;
+    }
+    
+    .event-disclaimer a {
+      color: #2462E1;
+      text-decoration: underline;
+    }
+
+    /* Workshop Card Styles */
+    .workshop-card {
+      border-left: 4px solid #e74c3c;
+    }
+    
+    .workshop-card .tags .tag {
+      background: #fdecea;
+      color: #e74c3c;
+    }
   </style>
 </head>
 <body>
@@ -199,86 +223,82 @@
   </div>
 
   <div id="news-container" class="news-container">
-    <div class="loading-spinner"></div>
+    <!-- KI-Stammtisch Event Card -->
+    <article class="news-card">
+      <img src="https://meinjob365.de/images/stammtisch.webp" alt="Stammtisch">
+      <div class="news-content">
+        <h3>KI-Stammtisch</h3>
+        <p class="date">24. Juli 2025 | 12:00-13:00 Uhr</p>
+        <p>Diskussion über aktuelle KI-Entwicklungen im Recruiting mit Experten aus der Praxis.</p>
+        <div class="tags">
+          <span class="tag">KI</span>
+          <span class="tag">Networking</span>
+          <span class="tag">Remote</span>
+        </div>
+        <div class="event-disclaimer">
+          <em>Veranstaltung von Daniel Müller (Experte für Zeitarbeit & KI). 
+          <a href="[LINK-ZUR-LINKEDIN-GRUPPE]" target="_blank">Zur LinkedIn-Gruppe</a>. 
+          MeinJob365 ist nicht Veranstalter.</em>
+        </div>
+      </div>
+    </article>
+    
+    <!-- TOP CEO Leadership Workshop Card -->
+    <article class="news-card workshop-card">
+      <img src="https://meinjob365.de/images/ceoleadership.webp" alt="TOP CEO Leadership Workshop">
+      <div class="news-content">
+        <h3>TOP CEO Leadership Workshop</h3>
+        <p class="date">23. Juli 2025 | 13:00 Uhr</p>
+        <p>Das Leadership-Rezept für stressfreie Unternehmensführung mit Doreen Hegemann.</p>
+        <div class="tags">
+          <span class="tag">Leadership</span>
+          <span class="tag">Workshop</span>
+          <span class="tag">Kostenfrei</span>
+        </div>
+        <div class="event-disclaimer">
+          <em>Veranstaltung von Doreen Hegemann. 
+          <a href="https://go.betterbusinessacademy.de/top-ceo-workshop-li/" target="_blank">Zur Anmeldung</a>. 
+          MeinJob365 ist nicht Veranstalter.</em>
+        </div>
+      </div>
+    </article>
   </div>
 
-  <!-- JavaScript ostaje nepromijenjen jer je već ispravan i optimiziran -->
-   <script>
+  <!-- Legal Footer -->
+  <footer style="margin-top: 50px; text-align: center; font-size: 0.9em; color: #666;">
+    <p><a href="/disclaimer">Haftungsausschluss</a> | <a href="/datenschutz">Datenschutz</a> | <a href="/impressum">Impressum</a></p>
+    <p>© 2024 MeinJob365. Community-Veranstaltungen werden unabhängig organisiert.</p>
+  </footer>
+
+  <script>
   document.addEventListener('DOMContentLoaded', async () => {
     try {
-      showLoading();
-
-      const response = await fetch('./data/news.json'); // prilagodi putanju ako treba
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const allNews = await response.json();
-
-      if (!Array.isArray(allNews)) {
-        throw new Error('Invalid data format: Expected array');
-      }
-
-      initializeNews(allNews);
+      // Show loading state
+      const container = document.getElementById('news-container');
+      
+      // In a real implementation, you would fetch news data here
+      // For now we're using static content with the events
+      
+      // Initialize search functionality
+      setupSearch();
+      setupFilters();
+      
     } catch (error) {
       console.error('Initialisierungsfehler:', error);
       showError('Die Nachrichten konnten nicht geladen werden. Bitte versuchen Sie es später erneut.');
     }
   });
 
-  function showLoading() {
-    document.getElementById('news-container').innerHTML = '<div class="loading-spinner"></div>';
-  }
-
-  function initializeNews(news) {
-    window.newsData = news;
-    renderNews(sortNews(news, 'recent'));
-    setupSearch();
-    setupFilters();
-  }
-
-  function sortNews(news, by) {
-    const copy = [...news];
-    if (by === 'recent') return copy.sort((a, b) => new Date(b.date) - new Date(a.date));
-    if (by === 'popular') return copy.sort((a, b) => (b.views || 0) - (a.views || 0));
-    return copy;
-  }
-
-  function renderNews(items) {
-    const container = document.getElementById('news-container');
-    if (!items.length) {
-      container.innerHTML = '<div class="no-results">Keine Nachrichten gefunden.</div>';
-      return;
-    }
-
-    container.innerHTML = items.map(item => `
-      <article class="news-card">
-        <a href="${item.url || '#'}">
-          <img src="${item.image || 'placeholder.jpg'}" alt="${item.title || 'Nachricht'}">
-          <div class="news-content">
-            <h3>${item.title || 'Ohne Titel'}</h3>
-            <p class="date">${item.date ? formatDate(item.date) : 'Datum unbekannt'}</p>
-            <p>${item.excerpt || ''}</p>
-            <div class="tags">
-              ${(item.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('')}
-            </div>
-          </div>
-        </a>
-      </article>
-    `).join('');
-  }
-
   function setupSearch() {
     const input = document.getElementById('search-news');
     input.addEventListener('input', (e) => {
       const val = e.target.value.toLowerCase();
-      const filtered = window.newsData.filter(n =>
-        (n.title || '').toLowerCase().includes(val) ||
-        (n.excerpt || '').toLowerCase().includes(val) ||
-        (n.tags || []).some(tag => tag.toLowerCase().includes(val))
-      );
-      renderNews(filtered);
+      const cards = document.querySelectorAll('.news-card');
+      
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(val) ? 'block' : 'none';
+      });
     });
   }
 
@@ -288,20 +308,9 @@
       btn.addEventListener('click', () => {
         buttons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const filtered = sortNews(window.newsData, btn.dataset.filter);
-        renderNews(filtered);
+        // In a real implementation, you would sort/filter news here
       });
     });
-  }
-
-  function formatDate(str) {
-    try {
-      return new Date(str).toLocaleDateString('de-DE', {
-        year: 'numeric', month: 'long', day: 'numeric'
-      });
-    } catch {
-      return str;
-    }
   }
 
   function showError(msg) {
@@ -312,7 +321,6 @@
       </div>
     `;
   }
-</script>
-
+  </script>
 </body>
 </html>
