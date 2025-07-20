@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 Disallow: /private/
+Disallow: /test/
+Disallow: /wp-admin/
+Disallow: /dashboard/
+
+# Cloudflare-specific exclusions
+Disallow: /cdn-cgi/
+Disallow: /_cf/
+
+# Legal compliance paths
+Allow: /impressum
+Allow: /datenschutz
+
 Sitemap: https://meinjob365.de/sitemap.xml
