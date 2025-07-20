@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-language" content="de">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Emil Juric">
-  <meta name="publisher" content="meinjob365">
   
-  <!-- Optimizirani meta tagovi -->
-  <meta name="title" content="meinjob365 – Praktikum, Ausbildung & Karriere | Die innovative Jobbörse">
+  <!-- Primary Meta Tags -->
+  <title>meinjob365 – Praktika, Ausbildung & Karriere - Alles mit meinjob365 (Launch 2026)</title>
   <meta name="description" content="Entdecke Praktika, Ausbildungsplätze und Karrierechancen bei meinjob365 – Die neue Jobbörse für KMUs, Kommunen und Startups. Starte 2026 durch!">
-  <meta name="keywords" content="Praktikum, Ausbildung, Karriere, Jobbörse, Stellenangebote, meinjob365, Arbeit, Jobportal">
+  <meta name="author" content="Emil Juric">
+  <meta name="robots" content="index, follow">
 
-  <!-- OpenGraph -->
+  <!-- OpenGraph / Social Meta -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="meinjob365">
-  <meta property="og:locale" content="de_DE">
   <meta property="og:title" content="meinjob365 – Praktikum, Ausbildung & Karriere | Die innovative Jobbörse">
   <meta property="og:description" content="Entdecke Praktika, Ausbildungsplätze und Karrierechancen bei meinjob365 – Die neue Jobbörse für KMUs, Kommunen und Startups.">
   <meta property="og:image" content="https://meinjob365.de/images/meinjob365_logo.png">
   <meta property="og:url" content="https://meinjob365.de">
+  <meta property="og:locale" content="de_DE">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -28,9 +27,15 @@
   <meta name="twitter:description" content="Entdecke Praktika, Ausbildungsplätze und Karrierechancen bei meinjob365 – Die neue Jobbörse für KMUs, Kommunen und Startups.">
   <meta name="twitter:image" content="https://meinjob365.de/images/meinjob365_logo.png">
 
-  <title>meinjob365 – Praktika, Ausbildung & Karriere - Alles mit meinjob365 (Launch 2026)</title>
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- Strukturirani podaci s dodatnim ključnim riječima -->
+  <!-- Preload Resources -->
+  <link rel="preload" href="/images/meinjob365_logo.png" as="image">
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -62,20 +67,29 @@
   </script>
 
   <style>
-    /* Originalni CSS ostaje nepromijenjen */
+    /* CSS Variables */
+    :root {
+      --primary: #2462E1;
+      --secondary: #FF6600;
+      --text: #222;
+      --light-text: #676767;
+      --bg: #f9f9f9;
+    }
+
     * {
       box-sizing: border-box;
     }
 
     body {
       font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
       margin: 0;
       padding: 0;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
@@ -88,6 +102,7 @@
 
     header img {
       height: 40px;
+      width: auto;
     }
 
     main {
@@ -104,22 +119,20 @@
     h1 {
       font-size: 2.2em;
       margin-bottom: 0.2em;
-      
-      
     }
 
     h2 {
       font-size: 1.5em;
       margin-top: 0.5em;
       text-align: center;
-      color: #676767;
+      color: var(--light-text);
     }
 
     p, ul {
       list-style-type: none;
       padding-left: 0;
       text-align: center;
-      color: #676767;
+      color: var(--light-text);
       font-size: 1.15em;
       line-height: 1.7;
       margin-bottom: 1.5em;
@@ -148,7 +161,7 @@
       padding: 20px;
       font-size: 0.9em;
       color: #aaa;
-      background: #f9f9f9;
+      background: var(--bg);
       margin-top: auto;
       width: 100%;
     }
@@ -231,31 +244,49 @@
       margin-top: 15px;
     }
 
-    .desktop-only {
-      display: none;
-    }
-
-    @media (min-width: 601px) {
-      .desktop-only {
-        display: inline-block;
-      }
-    }
-    .left-aligned-links {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-      text-align: left;
-      margin-top: 100px;
-    }
-
     @media (min-width: 601px) {
       .left-aligned-links {
         margin-left: -20px;
         padding-left: 20px;
         width: calc(100% + 40px);
-        position: relative; left: -300px;
+        position: relative;
+        left: -300px;
       }
+    }
+
+    /* GDPR Consent Banner */
+    #cookie-consent {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      padding: 15px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+      display: none;
+    }
+
+    .consent-buttons {
+      margin-top: 10px;
+    }
+
+    .consent-btn {
+      padding: 8px 16px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .accept-btn {
+      background: var(--primary);
+      color: white;
+    }
+
+    .reject-btn {
+      background: #e0e0e0;
+      color: var(--text);
     }
 
     /* SEO helper text - vidljiv samo tražilicama */
@@ -271,42 +302,42 @@
 </head>
 
 <body>
-
-  <!-- SEO helper text (samo za tražilice) -->
+  <!-- Hidden SEO content -->
   <div class="seo-helper">
       <h1><strong><span style="color: rgb(255, 102, 0);">Praktika  Ausbildung  Karriere</span><br><span style="color: rgb(36, 98, 225);">alles mit meinjob365</span></strong></h1>
     <p>Finden Sie das perfekte Praktikum, Ausbildung oder Stellenangebot in Deutschland durch unsere innovative Jobbörse meinjob365.</p>
   </div>
 
   <header>
-    <img src="/images/meinjob365_logo.png" alt="meinjob365 Logo - Jobbörse für Praktikum, Ausbildung und Karriere">
-    <a class="button mobile-only" href="https://www.linkedin.com/in/emil-juric/" target="_blank">
+    <img src="/images/meinjob365_logo.png" 
+         alt="meinjob365 Logo - Jobbörse für Praktikum, Ausbildung und Karriere"
+         width="180" height="40">
+    <a class="button mobile-only" href="https://www.linkedin.com/in/emil-juric/" target="_blank" rel="noopener noreferrer">
       LinkedIn
     </a>
   </header>
-<div class="slogan-banner">
+
+  <div class="slogan-banner">
     <h2 style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; line-height: 1.3;">
-  <strong style="display: block; text-align: center; font-size: clamp(1.5rem, 4vw, 2.5rem);">
-    <span style="color: #FF6600; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      Praktika • Ausbildung • Karriere
-    </span>
-    <span style="display: block; color: rgb(39, 98, 225); font-size: clamp(1.2rem, 3vw, 2rem); margin-top: 8px;">
-      <span style="border-bottom: 3px solid #FF6600; padding-bottom: 4px;">Lebenslang mit MeinJob365!</span>
-    </span>
-  </strong>
-</h2>
-    
+      <strong style="display: block; text-align: center; font-size: clamp(1.5rem, 4vw, 2.5rem);">
+        <span style="color: var(--secondary); text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          Praktika • Ausbildung • Karriere
+        </span>
+        <span style="display: block; color: var(--primary); font-size: clamp(1.2rem, 3vw, 2rem); margin-top: 8px;">
+          <span style="border-bottom: 3px solid var(--secondary); padding-bottom: 4px;">Lebenslang mit MeinJob365!</span>
+        </span>
+      </strong>
+    </h2>
   </div>
+
   <main>
-    
-    <!-- Originalni tekst OSTOJI NE PROMIJENJEN -->
-    <h1><strong><span style="color: rgb(255, 102, 0);">Kommt</span><span style="color: rgb(36, 98, 225);"> bald!</span></strong> </h1>
+    <h1><strong><span style="color: var(--secondary);">Kommt</span><span style="color: var(--primary);"> bald!</span></strong> </h1>
 
     <p>
       Eine neue Plattform für faire und transparente Jobanzeigen –<br>
       für kleine und mittelständische Unternehmen, Großkonzerne, Städte, Kommunen, soziale Einrichtungen, Personaldienstleister, Zeitarbeitsfirmen und Startups.<br><br>
 
-      <strong><span style="color: rgb(255, 102, 0);">mein</span><span style="color: rgb(36, 98, 225);">job365</span></strong> setzt neue Maßstäbe in Sachen Nutzerfreundlichkeit und Individualität:  
+      <strong><span style="color: var(--secondary);">mein</span><span style="color: var(--primary);">job365</span></strong> setzt neue Maßstäbe in Sachen Nutzerfreundlichkeit und Individualität:  
       Wähle aus verschiedenen modernen Design-Themen, die deinen persönlichen Stil und deine Bedürfnisse perfekt widerspiegeln.  
       Ob klassisch, minimalistisch, farbenfroh oder elegant – gestalte die Plattform ganz nach deinem Geschmack.<br><br>
 
@@ -315,7 +346,7 @@
       der deine Job- oder Personalsuche visuell aufregend und dynamisch macht.  
       So wird die Nutzung von meinjob365 nicht nur effektiv, sondern auch zum echten Erlebnis.<br><br>
 
-      Ich bin <strong>Emil Juric</strong>, Gründer von <strong><span style="color: rgb(255 , 102, 0);">mein</span><span style="color: rgb(36 , 98, 225);">job365.</span></strong><br>
+      Ich bin <strong>Emil Juric</strong>, Gründer von <strong><span style="color: var(--secondary);">mein</span><span style="color: var(--primary);">job365.</span></strong><br>
       Unser Ziel: Reduzierte Werbekosten bei voller Reichweite –<br>
       mit Fokus auf Vertrauen, Sichtbarkeit und echtem Mehrwert für alle Nutzer.<br><br>
 
@@ -324,7 +355,7 @@
       <em>Hinweis: Dieses Projekt befindet sich noch in der nicht-kommerziellen Vorbereitungsphase.</em>
     </p>
 
-    <h2>Für wen ist <strong><span style="color: rgb(255, 102, 0);">mein</span><span style="color: rgb(36, 98, 225);">job365</span></strong> gedacht?</h2>
+    <h2>Für wen ist <strong><span style="color: var(--secondary);">mein</span><span style="color: var(--primary);">job365</span></strong> gedacht?</h2>
     <ul>
       <li>Kleine Unternehmen & Mittelstand</li>
       <li>Großkonzerne & Industrie</li>
@@ -342,12 +373,56 @@
       <a class="nav-link" href="/ueber-uns" title="Über meinjob365 - Jobbörse für Praktikum und Ausbildung">Über uns</a>
       <a class="nav-link" href="/aktuelles" title="Aktuelle Neuigkeiten zu Praktika und Ausbildungsplätzen">Aktuelles</a>
       <a class="nav-link" href="/impressum" title="Impressum">Impressum</a>
+      <a class="nav-link" href="/datenschutz" title="Datenschutzerklärung">Datenschutz</a>
     </div>
   </main>
   
   <footer>
     © 2025 meinjob365 – Jobbörse für Praktikum, Ausbildung & Karriere – Alle Rechte vorbehalten
   </footer>
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2bd16794874b43a18c753e74b16c28f5"}'></script><!-- End Cloudflare Web Analytics --> 
+
+  <!-- GDPR Cookie Consent Banner -->
+  <div id="cookie-consent">
+    <p>Wir verwenden Cloudflare Analytics, um die Nutzung unserer Website zu analysieren. Diese Daten helfen uns, unsere Dienste zu verbessern. Ihre Daten werden anonymisiert erfasst.</p>
+    <div class="consent-buttons">
+      <button class="consent-btn accept-btn" id="accept-cookies">Akzeptieren</button>
+      <button class="consent-btn reject-btn" id="reject-cookies">Ablehnen</button>
+      <a href="/datenschutz" style="margin-left: 15px; color: var(--primary);">Mehr erfahren</a>
+    </div>
+  </div>
+
+  <script>
+    // GDPR Compliance Script
+    document.addEventListener('DOMContentLoaded', function() {
+      // Cookie Consent Logic
+      if (!localStorage.getItem('cookie_consent')) {
+        document.getElementById('cookie-consent').style.display = 'block';
+      }
+
+      document.getElementById('accept-cookies').addEventListener('click', function() {
+        localStorage.setItem('cookie_consent', 'accepted');
+        document.getElementById('cookie-consent').style.display = 'none';
+        loadCloudflareAnalytics();
+      });
+
+      document.getElementById('reject-cookies').addEventListener('click', function() {
+        localStorage.setItem('cookie_consent', 'rejected');
+        document.getElementById('cookie-consent').style.display = 'none';
+      });
+
+      // Load analytics if already consented
+      if (localStorage.getItem('cookie_consent') === 'accepted') {
+        loadCloudflareAnalytics();
+      }
+    });
+
+    function loadCloudflareAnalytics() {
+      const script = document.createElement('script');
+      script.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      script.defer = true;
+      script.setAttribute('data-cf-beacon', '{"token": "2bd16794874b43a18c753e74b16c28f5"}');
+      document.body.appendChild(script);
+    }
+  </script>
 </body>
 </html>
