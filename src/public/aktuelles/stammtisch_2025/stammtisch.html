@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>KI-Stammtisch 2025 | MeinJob365</title>
-    <meta name="description" content="Rückblick auf den KI-Stammtisch 2025 mit spannenden Einblicken in den Einsatz von KI im Recruiting.">
-    <link rel="canonical" href="https://meinjob365.de/aktuelles/stammtisch_2025/stammtisch.html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rückblick auf den KI-Stammtisch 2025 mit spannenden Einblicken in den Einsatz von KI im Recruiting." />
+    <link rel="canonical" href="https://meinjob365.de/aktuelles/stammtisch_2025/stammtisch.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="KI-Stammtisch 2025 | MeinJob365" />
+    <meta property="og:description" content="Rückblick auf den KI-Stammtisch 2025 mit spannenden Einblicken in den Einsatz von KI im Recruiting." />
+    <meta property="og:image" content="https://meinjob365.de/images/stammtisch.webp" />
+    <meta property="og:url" content="https://meinjob365.de/aktuelles/stammtisch_2025/stammtisch.html" />
+    <meta property="og:type" content="article" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="KI-Stammtisch 2025 | MeinJob365" />
+    <meta name="twitter:description" content="Rückblick auf den KI-Stammtisch 2025 mit spannenden Einblicken in den Einsatz von KI im Recruiting." />
+    <meta name="twitter:image" content="https://meinjob365.de/images/stammtisch.webp" />
+
+    <!-- JSON-LD Event Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "KI-Stammtisch 2025",
+      "startDate": "2025-07-24T19:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://www.linkedin.com/groups/13298429/"
+      },
+      "image": [
+        "https://meinjob365.de/images/stammtisch.webp"
+      ],
+      "description": "Nächster KI-Stammtisch: 24.07.2025 (remote) via LinkedIn-Gruppe. Organisiert von Daniel Müller, Experte für Zeitarbeit und KI.",
+      "organizer": {
+        "@type": "Person",
+        "name": "Daniel Müller",
+        "sameAs": "https://www.linkedin.com/in/daniel-mueller-zeitarbeit/"
+      },
+      "url": "https://meinjob365.de/aktuelles/stammtisch_2025/stammtisch.html"
+    }
+    </script>
+
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -20,7 +60,7 @@
             padding: 15px;
             background-color: #f5f5f5;
         }
-        
+
         article {
             background: white;
             padding: 20px;
@@ -29,14 +69,14 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         h1 {
             color: #2c3e50;
             margin-bottom: 20px;
             font-size: clamp(1.5rem, 4vw, 2rem);
             text-align: center;
         }
-        
+
         .event-image {
             width: 100%;
             height: auto;
@@ -47,16 +87,26 @@
             display: block;
             background: #f0f0f0;
         }
-        
+
         .content {
             margin: 20px 0;
             padding: 0 5px;
         }
-        
+
         .content p {
             margin-bottom: 15px;
+            font-size: 1rem;
         }
-        
+
+        .content a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .content a:hover {
+            text-decoration: underline;
+        }
+
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -66,18 +116,20 @@
             border-radius: 4px;
             text-decoration: none;
             transition: background 0.3s;
+            cursor: pointer;
+            user-select: none;
         }
-        
+
         .back-link:hover {
             background: #2980b9;
             text-decoration: none;
         }
-        
+
         @media (max-width: 480px) {
             article {
                 padding: 15px;
             }
-            
+
             .event-image {
                 max-height: 50vh;
             }
@@ -92,11 +144,28 @@
              class="event-image"
              loading="lazy"
              width="800"
-             height="450">
+             height="450" />
         <div class="content">
             <p><strong>Nächster KI-Stammtisch:</strong> 24.07.2025 (remote) via <a href="https://www.linkedin.com/groups/13298429/" target="_blank" rel="noopener noreferrer">LinkedIn-Gruppe</a>. Organisiert von Daniel Müller, Experte für Zeitarbeit und KI.</p>
         </div>
-        <a href="/aktuelles.html" class="back-link">← Zurück zur Übersicht</a>
+        <a id="back-link" class="back-link">← Zurück zur Übersicht</a>
     </article>
+
+    <script>
+      document.getElementById('back-link').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const fallbackUrl = '/aktuelles.html';
+        const oldUrl = window.location.href;
+
+        history.back();
+
+        setTimeout(() => {
+          if (window.location.href === oldUrl) {
+            window.location.href = fallbackUrl;
+          }
+        }, 500);
+      });
+    </script>
 </body>
 </html>
