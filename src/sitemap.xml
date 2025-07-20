@@ -1,46 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Glavne stranice -->
+
+  <!-- Hauptseiten -->
   <url>
     <loc>https://meinjob365.de/</loc>
     <lastmod>2024-07-18</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>wöchentlich</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://meinjob365.de/aktuelles.html</loc>
     <lastmod>2024-07-18</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>wöchentlich</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://meinjob365.de/ueber-uns.html</loc>
     <lastmod>2024-07-18</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>monatlich</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Direktorijumi (ako sadrže HTML stranice) -->
+
+  <!-- Verzeichnisse -->
   <url>
     <loc>https://meinjob365.de/aktuelles/</loc>
     <lastmod>2024-07-18</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>wöchentlich</changefreq>
   </url>
   <url>
     <loc>https://meinjob365.de/data/</loc>
     <lastmod>2024-07-18</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>monatlich</changefreq>
   </url>
-  
-  <!-- Važni resursi -->
+
+  <!-- Wichtige Ressourcen -->
   <url>
     <loc>https://meinjob365.de/robots.txt</loc>
     <lastmod>2024-07-18</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>jährlich</changefreq>
   </url>
   <url>
     <loc>https://meinjob365.de/sitemap.xml</loc>
     <lastmod>2024-07-18</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>jährlich</changefreq>
   </url>
+
+  <!-- Nachrichten / Veranstaltungen -->
+  <url>
+    <loc>https://meinjob365.de/public/aktuelles/stammtisch_2025/stammtisch.html</loc>
+    <lastmod>2025-07-24</lastmod>
+    <changefreq>jährlich</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://meinjob365.de/public/aktuelles/stammtisch_2025/topceoleadership.html</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>jährlich</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
