@@ -12,16 +12,6 @@
         a { color: #2462E1; text-decoration: none; }
         a:hover { text-decoration: underline; }
         code { background: #f5f5f5; padding: 2px 4px; border-radius: 3px; }
-        .cookie-banner {
-            position: fixed; bottom: 0; left: 0; right: 0;
-            background: #f8f9fa; padding: 15px; box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            z-index: 1000; display: flex; flex-wrap: wrap; gap: 10px;
-            align-items: center; justify-content: center;
-        }
-        .cookie-banner button {
-            background: #2462E1; color: white; border: none;
-            padding: 8px 16px; border-radius: 4px; cursor: pointer;
-        }
     </style>
 </head>
 <body>
@@ -77,42 +67,5 @@
         Bei Anliegen kontaktieren Sie uns bitte unter:  
         <a href="mailto:datenschutz@meinjob365.de">datenschutz@meinjob365.de</a>
     </p>
-
-    <div id="cookieConsentBanner" class="cookie-banner" style="display: none;">
-        <p>Wir verwenden Cloudflare Analytics zur Website-Verbesserung. Alle Daten sind anonymisiert.</p>
-        <button onclick="acceptCookies()">Akzeptieren</button>
-        <a href="/datenschutz" style="margin-left: 15px;">Mehr erfahren</a>
-    </div>
-
-    <script>
-        // Cookie Consent Management
-        if (!localStorage.getItem('cookiesAccepted')) {
-            document.getElementById('cookieConsentBanner').style.display = 'flex';
-        }
-
-        function acceptCookies() {
-            localStorage.setItem('cookiesAccepted', 'true');
-            document.getElementById('cookieConsentBanner').style.display = 'none';
-            loadCloudflareAnalytics();
-        }
-
-        function loadCloudflareAnalytics() {
-            if (localStorage.getItem('cookiesAccepted')) {
-                var script = document.createElement('script');
-                script.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-                script.defer = true;
-                script.setAttribute('data-cf-beacon', JSON.stringify({
-                    token: "2bd16794874b43a18c753e74b16c28f5",
-                    spa: true,
-                    anonymizeIP: true
-                }));
-                document.body.appendChild(script);
-            }
-        }
-
-        window.addEventListener('DOMContentLoaded', function () {
-            loadCloudflareAnalytics();
-        });
-    </script>
 </body>
 </html>
