@@ -5,7 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aktuelles | MeinJob365</title>
   <meta name="description" content="Bleiben Sie auf dem Laufenden mit den neuesten Nachrichten, Events und Entwicklungen rund um Recruiting, KI und Arbeitswelt." />
- <style>
+  
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "KI-Stammtisch: Recruiting-Trends 2025",
+      "startDate": "2025-07-24T12:00:00+02:00",
+      "endDate": "2025-07-24T13:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "description": "Diskussion über aktuelle KI-Entwicklungen im Recruiting mit Experten aus der Praxis.",
+      "image": "https://meinjob365.de/images/stammtisch.webp",
+      "location": {
+        "@type": "VirtualLocation",
+        "name": "Online",
+        "url": "https://meinjob365.de/public/aktuelles/stammtisch_2025/stammtisch.html"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://meinjob365.de/public/aktuelles/stammtisch_2025/stammtisch.html",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      },
+      "performer": {
+        "@type": "Person",
+        "name": "Daniel Müller",
+        "description": "Experte für Zeitarbeit & Unternehmenswachstum"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "LinkedIn KI-Stammtisch Gruppe",
+        "url": "https://www.linkedin.com/groups/13298429/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "TOP CEO Leadership",
+      "startDate": "2025-07-23T13:00:00+02:00",
+      "endDate": "2025-07-23T15:00:00+02:00",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "description": "Das Leadership-Rezept für stressfreie Unternehmensführung mit Doreen Hegemann.",
+      "image": "https://meinjob365.de/images/ceoleadership.webp",
+      "location": {
+        "@type": "VirtualLocation",
+        "name": "Online",
+        "url": "https://meinjob365.de/public/aktuelles/stammtisch_2025/topceoleadership.html"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://go.betterbusinessacademy.de/top-ceo-workshop-li/",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      },
+      "performer": {
+        "@type": "Person",
+        "name": "Doreen Hegemann",
+        "description": "Erfahrener Führungsexperte mit 25 Jahren Erfahrung in DAX-30 Unternehmen"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Better Business Academy",
+        "url": "https://betterbusinessacademy.de"
+      }
+    }
+  ]
+  </script>
+
+  <style>
     *, *::before, *::after {
       box-sizing: border-box;
     }
@@ -25,8 +98,8 @@
     header h1 {
       margin-bottom: 10px;
       font-size: 2.0rem;
-      color: #FF6600; /* tvoja narančasta */
-      border-bottom: 2px solid #2462E1; /* tvoja plava */
+      color: #FF6600;
+      border-bottom: 2px solid #2462E1;
       display: inline-block;
       padding-bottom: 5px;
     }
@@ -105,7 +178,7 @@
     .content h2 {
       margin: 0 0 10px 0;
       font-size: 1.5rem;
-      color: #FF6600; /* naslov u tvojoj narančastoj */
+      color: #FF6600;
     }
     .content h2 a {
       color: #FF6600;
@@ -162,7 +235,6 @@
     .learn-more:hover {
       color: #003f8a;
     }
-    /* Workshop specific */
     article.event.workshop {
       border-left: 8px solid #FF6600;
     }
@@ -170,7 +242,6 @@
       background: #fdecea;
       color: #FF6600;
     }
-    /* Error message */
     .error-message {
       padding: 20px;
       background: #ffeeee;
@@ -214,26 +285,31 @@
       <img src="https://meinjob365.de/images/stammtisch.webp" alt="KI-Stammtisch" itemprop="image" />
       <div class="content">
         <h2 itemprop="name">
-          <a href="public/aktuelles/stammtisch_2025/stammtisch.html">KI-Stammtisch</a>
+          <a href="public/aktuelles/stammtisch_2025/stammtisch.html" itemprop="url">KI-Stammtisch</a>
         </h2>
         <div class="date-location">
           <time datetime="2025-07-24T12:00" itemprop="startDate">24. Juli 2025 | 12:00-13:00 Uhr</time> – 
-          <span itemprop="location" itemscope itemtype="https://schema.org/Place">
-            <span itemprop="name">Online / Remote</span>
+          <span itemprop="location" itemscope itemtype="https://schema.org/VirtualLocation">
+            <span itemprop="name">Online</span>
+            <meta itemprop="url" content="https://meinjob365.de/public/aktuelles/stammtisch_2025/stammtisch.html" />
           </span>
         </div>
         <p class="description" itemprop="description">
           Diskussion über aktuelle KI-Entwicklungen im Recruiting mit Experten aus der Praxis.
         </p>
-        <a href="public/aktuelles/stammtisch_2025/stammtisch.html" class="learn-more" aria-label="Mehr erfahren über KI-Stammtisch">Mehr erfahren →</a>
+        <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a href="public/aktuelles/stammtisch_2025/stammtisch.html" class="learn-more" aria-label="Mehr erfahren über KI-Stammtisch" itemprop="url">Mehr erfahren →</a>
+          <meta itemprop="price" content="0" />
+          <meta itemprop="priceCurrency" content="EUR" />
+        </div>
         <div class="tags" aria-label="Tags">
           <span class="tag">KI</span>
           <span class="tag">Networking</span>
           <span class="tag">Remote</span>
         </div>
         <p class="disclaimer">
-          Veranstaltung von Daniel Müller (Experte für Zeitarbeit & KI). 
-          <a href="https://www.linkedin.com/groups/13298429/" target="_blank" rel="noopener noreferrer">Zur LinkedIn-Gruppe</a>. 
+          Veranstaltung von <span itemprop="performer" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Daniel Müller</span></span> (Experte für Zeitarbeit & KI). 
+          <a href="https://www.linkedin.com/groups/13298429/" target="_blank" rel="noopener noreferrer" itemprop="organizer">Zur LinkedIn-Gruppe</a>. 
           MeinJob365 ist nicht Veranstalter.
         </p>
       </div>
@@ -243,26 +319,31 @@
       <img src="https://meinjob365.de/images/ceoleadership.webp" alt="TOP CEO Leadership" itemprop="image" />
       <div class="content">
         <h2 itemprop="name">
-          <a href="public/aktuelles/stammtisch_2025/topceoleadership.html">TOP CEO Leadership</a>
+          <a href="public/aktuelles/stammtisch_2025/topceoleadership.html" itemprop="url">TOP CEO Leadership</a>
         </h2>
         <div class="date-location">
           <time datetime="2025-07-23T13:00" itemprop="startDate">23. Juli 2025 | 13:00 Uhr</time> – 
-          <span itemprop="location" itemscope itemtype="https://schema.org/Place">
+          <span itemprop="location" itemscope itemtype="https://schema.org/VirtualLocation">
             <span itemprop="name">Online</span>
+            <meta itemprop="url" content="https://meinjob365.de/public/aktuelles/stammtisch_2025/topceoleadership.html" />
           </span>
         </div>
         <p class="description" itemprop="description">
           Das Leadership-Rezept für stressfreie Unternehmensführung mit Doreen Hegemann.
         </p>
-        <a href="public/aktuelles/stammtisch_2025/topceoleadership.html" class="learn-more" aria-label="Mehr erfahren über TOP CEO Leadership Workshop">Mehr erfahren →</a>
+        <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <a href="public/aktuelles/stammtisch_2025/topceoleadership.html" class="learn-more" aria-label="Mehr erfahren über TOP CEO Leadership Workshop" itemprop="url">Mehr erfahren →</a>
+          <meta itemprop="price" content="0" />
+          <meta itemprop="priceCurrency" content="EUR" />
+        </div>
         <div class="tags" aria-label="Tags">
           <span class="tag">Leadership</span>
           <span class="tag">Workshop</span>
           <span class="tag">Kostenfrei</span>
         </div>
         <p class="disclaimer">
-          Veranstaltung von Doreen Hegemann. 
-          <a href="https://go.betterbusinessacademy.de/top-ceo-workshop-li/" target="_blank" rel="noopener noreferrer">Zur Anmeldung</a>. 
+          Veranstaltung von <span itemprop="performer" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Doreen Hegemann</span></span>. 
+          <a href="https://go.betterbusinessacademy.de/top-ceo-workshop-li/" target="_blank" rel="noopener noreferrer" itemprop="organizer">Zur Anmeldung</a>. 
           MeinJob365 ist nicht Veranstalter.
         </p>
       </div>
@@ -313,12 +394,28 @@
         }
       });
 
-      // Filter buttons (UI only, no sorting logic yet)
+      // Filter buttons
       filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
           filterButtons.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          // Hier kannst du zukünftig Sortier- oder Filterlogik einbauen
+          
+          const events = Array.from(newsContainer.querySelectorAll('article.event'));
+          if (btn.dataset.filter === 'popular') {
+            events.sort((a, b) => {
+              const viewsA = parseInt(a.querySelector('.views')?.textContent || 0;
+              const viewsB = parseInt(b.querySelector('.views')?.textContent || 0;
+              return viewsB - viewsA;
+            });
+          } else {
+            events.sort((a, b) => {
+              const dateA = new Date(a.querySelector('time').datetime);
+              const dateB = new Date(b.querySelector('time').datetime);
+              return dateB - dateA;
+            });
+          }
+          
+          events.forEach(event => newsContainer.appendChild(event));
         });
       });
     });
