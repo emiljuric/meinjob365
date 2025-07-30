@@ -1,5 +1,19 @@
 [
   {
+    "id": "2025-08-19-webinar-feinplanung",
+    "title": "Webinar: Vom Excel-Chaos zur automatisierten Feinplanung",
+    "date": "2025-08-19",
+    "excerpt": "Wie moderne Optimierungsverfahren und KI helfen können, die Feinplanung zu automatisieren und Excel-Probleme zu überwinden. Mit Dr. Felix J. Grumbach.",
+    "image": "/images/webinar.webp",
+    "tags": ["Produktion", "KI", "Optimierung"],
+    "url": "public/aktuelles/stammtisch_2025/webinar.html",
+    "author": "Dr. Felix J. Grumbach",
+    "views": 189,
+    "time": "14:00-15:30 Uhr",
+    "organizer": "QUNEVO",
+    "registration_url": "https://tally.so/r/w84M0A"
+  },
+  {
     "id": "2025-07-24-ki-stammtisch",
     "title": "KI-Stammtisch: Recruiting-Trends 2025",
     "date": "2025-07-24",

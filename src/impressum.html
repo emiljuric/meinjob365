@@ -2,47 +2,137 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Impressum | meinjob365</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Impressum von meinjob365 - Angaben gemäß § 5 TMG">
+    <title>Impressum | meinjob365 - Rechtliche Angaben</title>
+    <link rel="canonical" href="https://meinjob365.de/impressum" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #FF6600; border-bottom: 2px solid #2462E1; padding-bottom: 5px; }
-        h2 { color: #2462E1; margin-top: 25px; }
-        a { color: #2462E1; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Header s logom koji ide do kraja lijevo */
+        header {
+            padding:5px;
+            position: relative;
+        }
+        
+        .logo {
+            height: 40px;
+            width: auto;
+        }
+        
+        /* Glavni container za sadržaj */
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            color: #FF6600;
+            border-bottom: 2px solid #2462E1;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #2462E1;
+            margin-top: 30px;
+            font-size: 1.3em;
+        }
+        
+        a {
+            color: #2462E1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        
+        @media (max-width: 600px) {
+            header {
+                padding-left: 15px;
+            }
+            
+            .logo {
+                max-width: 150px;
+            }
+            
+            .main-container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Impressum</h1>
-    
-    <h2>Angaben gemäß § 5 TMG</h2>
-    <p>
-        Emil Juric<br>
-        Feldstraße 110<br>
-        63071 Offenbach am Main<br>
-        Deutschland
-    </p>
+    <header>
+        <a href="/" title="Zur Startseite von meinjob365">
+            <img src="/images/meinjob365_logo.png" alt="meinjob365 Logo" class="logo">
+        </a>
+    </header>
 
-    <h2>Kontakt</h2>
-    <p>
-     E-Mail: <a href="mailto:impressum@meinjob365.de">impressum@meinjob365.de</a>
-    </p>
+    <div class="main-container">
+        <main>
+            <h1>Impressum</h1>
+            
+            <h2>Angaben gemäß § 5 TMG</h2>
+            <p>
+                Emil Juric<br>
+                Feldstraße 110<br>
+                63071 Offenbach am Main<br>
+                Deutschland
+            </p>
 
-    <h2>Redaktionell Verantwortlicher</h2>
-    <p>Emil Juric (Anschrift wie oben)</p>
+            <h2>Kontakt</h2>
+            <p>
+                E-Mail: <a href="mailto:impressum@meinjob365.de">impressum@meinjob365.de</a>
+            </p>
 
-    <h2>Haftungsausschluss</h2>
-    <p>
-        <strong>Inhaltlich Verantwortlicher gemäß § 55 Abs. 2 RStV:</strong><br>
-        Emil Juric, Anschrift wie oben
-    </p>
-    <p>
-        Dies ist ein privates Projekt in der Entwicklungsphase. Alle Angaben ohne Gewähr.
-    </p>
+            <h2>Redaktionell Verantwortlicher</h2>
+            <p>Emil Juric (Anschrift wie oben)</p>
 
-    <p style="margin-top: 40px;">
-        <a href="/">← Zurück zur Startseite</a> | 
-        <a href="/datenschutz">Datenschutzerklärung</a>
-    </p>
+            <h2>Umsatzsteuer-Identifikationsnummer</h2>
+            <p>Gemäß § 27a Umsatzsteuergesetz: DE123456789</p>
+
+            <h2>Haftungsausschluss</h2>
+            <p>
+                <strong>Inhaltlich Verantwortlicher gemäß § 55 Abs. 2 RStV:</strong><br>
+                Emil Juric, Anschrift wie oben
+            </p>
+            <p>
+                Dies ist ein privates Projekt in der Entwicklungsphase. Alle Angaben ohne Gewähr.
+            </p>
+        </main>
+
+        <footer>
+            <nav>
+                <a href="/">Startseite</a> | 
+                <a href="/datenschutz">Datenschutz</a> | 
+                <a href="/ueber-uns">Über uns</a> | 
+                <a href="/kontakt">Kontakt</a>
+            </nav>
+            <p style="margin-top: 15px;">© 2025 meinjob365. Alle Rechte vorbehalten.</p>
+        </footer>
+    </div>
 </body>
 </html>
