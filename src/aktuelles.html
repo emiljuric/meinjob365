@@ -140,10 +140,15 @@
       color: #333;
       background: #f9f9f9;
     }
+    
     header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+            padding:5px;
+            position: relative;
+        }
+     .logo {
+            height: 40px;
+            width: auto;
+        }
     header h1 {
       margin-bottom: 10px;
       font-size: 2.0rem;
@@ -336,9 +341,14 @@
 </head>
 <body>
   <header>
-    <h1>Aktuelles</h1>
+        <a href="/" title="Zur Startseite von meinjob365">
+            <img src="/images/meinjob365_logo.png" alt="meinjob365 Logo" class="logo">
+        </a>
+        <h1>Aktuelles</h1>
     <p>Bleiben Sie informiert über die neuesten Nachrichten und Veranstaltungen</p>
-  </header>
+    </header>
+    
+  
 
   <div class="filter-section">
     <input type="text" id="search-news" class="search-bar" placeholder="Nachrichten durchsuchen..." aria-label="Nachrichten durchsuchen" />
