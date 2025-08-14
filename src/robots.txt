@@ -1,17 +1,29 @@
+# Globalna pravila za sve tražilice
 User-agent: *
 Allow: /
+
+# Zabranjeni interni i testni dijelovi
 Disallow: /admin/
 Disallow: /private/
 Disallow: /test/
 Disallow: /wp-admin/
-Disallow: /dashboard/
-
-# Cloudflare-specific exclusions
 Disallow: /cdn-cgi/
 Disallow: /_cf/
 
-# Legal compliance paths
+# Eksplicitno dopuštenje za pravne stranice
 Allow: /impressum
 Allow: /datenschutz
 
+# Kaži botovima gdje je mapa sajta (važna za SEO)
 Sitemap: https://meinjob365.de/sitemap.xml
+
+# Preporuke za bolje indeksiranje
+# 1. Ograniči broj zahtjeva po sekundi (poželjno za manje servere)
+Crawl-delay: 5
+
+# 2. Pravila za specifične botove (ako želiš)
+User-agent: Bingbot
+Crawl-delay: 5
+
+User-agent: Yandex
+Crawl-delay: 10
