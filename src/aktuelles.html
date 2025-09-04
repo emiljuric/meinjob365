@@ -16,12 +16,7 @@
     .page-title { text-align: center; margin: 20px 0; padding-top: 10px; }
     .page-title h1 { font-size: 2.0rem; color: #FF6600; border-bottom: 2px solid #2462E1; display: inline-block; padding-bottom: 5px; margin-bottom: 10px; }
     .page-title p { color: #2462E1; font-weight: 600; margin: 0; }
-    .filter-section { text-align: center; }
-    .search-bar { padding: 10px; width: 100%; max-width: 500px; border: 1px solid #2462E1; border-radius: 6px; font-size: 1rem; color: #333; margin-top: 0; }
-    .filter-buttons { margin-top: 20px; }
-    .filter-btn { padding: 8px 15px; margin: 5px; background: #f0f0f0; border: 1px solid #2462E1; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; color: #2462E1; font-weight: 600; }
-    .filter-btn:hover { background: #e0e7f8; }
-    .filter-btn.active { background: #2462E1; color: white; border-color: #2462E1; }
+
     .news-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
     article.event { background: white; border: 1px solid #FF6600; border-left: 8px solid #FF6600; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
     article.event:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
@@ -32,19 +27,29 @@
     .content h2 a:hover { text-decoration: underline; color: #2462E1; }
     .date-location { font-size: 0.9em; color: #7f8c8d; margin-bottom: 10px; }
     .description { flex-grow: 1; margin-bottom: 15px; color: #444; }
+
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 15px; }
+    .btn { display: inline-block; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-weight: 700; border: 1px solid transparent; }
+    .btn.more { color: #2462E1; background: #eef1f4; border-color: #2462E1; }
+    .btn.more:hover { background: #e0e7f8; }
+    .btn.primary { background: #2462E1; color: #fff; }
+    .btn.primary:hover { background: #1b4590; }
+
     .tags { margin-bottom: 15px; }
     .tag { display: inline-block; background: #eef1f4; color: #2462E1; padding: 4px 10px; border-radius: 4px; font-size: 0.8em; margin-right: 6px; font-weight: 600; }
+
     .disclaimer { font-size: 0.85em; background: #fff8e1; border-left: 3px solid #ffc107; padding: 10px; margin-top: auto; color: #444; }
     .disclaimer a { color: #2462E1; text-decoration: underline; }
-    .learn-more { display: inline-block; margin-bottom: 15px; font-weight: 700; color: #2462E1; text-decoration: underline; cursor: pointer; }
-    .learn-more:hover { color: #003f8a; }
-    .error-message { padding: 20px; background: #ffeeee; border: 1px solid #ffcccc; border-radius: 5px; text-align: center; margin: 20px 0; color: #a94442; }
-    .refresh-btn { margin-top: 15px; padding: 8px 16px; background: #2462E1; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; }
-    .refresh-btn:hover { background-color: #1b4590; }
-    .no-results { grid-column: 1 / -1; text-align: center; padding: 40px; color: #666; }
+
     .views-count { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 3px 8px; border-radius: 4px; font-size: 0.8em; }
     .event-image-container { position: relative; }
-    @media (max-width: 768px) { .page-title { margin: 10px 5px 10px; } .page-title h1 { font-size: 1.7rem; } .news-container { grid-template-columns: 1fr; } .logo { left: 50px; } }
+
+    @media (max-width: 768px) {
+      .page-title { margin: 10px 5px 10px; }
+      .page-title h1 { font-size: 1.7rem; }
+      .news-container { grid-template-columns: 1fr; }
+      .logo { left: 50px; }
+    }
   </style>
 </head>
 <body>
@@ -59,17 +64,43 @@
     <p>Bleiben Sie informiert über die neuesten Nachrichten und Veranstaltungen</p>
   </div>
 
-  <div class="filter-section">
-    <input type="text" id="search-news" class="search-bar" placeholder="Nachrichten durchsuchen..." aria-label="Nachrichten durchsuchen" />
-    <div class="filter-buttons" role="group" aria-label="Filter nach">
-      <button class="filter-btn active" data-filter="recent" type="button">Neueste</button>
-      <button class="filter-btn" data-filter="popular" type="button">Beliebteste</button>
-    </div>
-  </div>
-
   <main id="news-container" class="news-container" aria-live="polite">
 
-    <!-- Neuer GO Event -->
+    <!-- KI-Masterclass (DETALJI + ANMELDUNG) -->
+    <article class="event workshop" itemscope itemtype="https://schema.org/Event">
+      <div class="event-image-container">
+        <img src="/images/KI-Masterclass.webp" alt="KI-Masterclass mit Prof. Dr. Claudia Hilker" itemprop="image" width="400" height="200" />
+        <span class="views-count">0 Aufrufe</span>
+      </div>
+      <div class="content">
+        <h2 itemprop="name">
+          <a href="public/aktuelles/ki-masterclass.html" itemprop="url">KI-Masterclass: Recruiting im Wandel</a>
+        </h2>
+        <div class="date-location">
+          <time datetime="2025-09-10T14:00" itemprop="startDate">10. September 2025 | 14:00–15:30 Uhr</time> –
+          <span itemprop="location" itemscope itemtype="https://schema.org/VirtualLocation">
+            <span itemprop="name">Online</span>
+          </span>
+        </div>
+        <p class="description" itemprop="description">
+          Künstliche Intelligenz verändert die Arbeitswelt – und auch das Recruiting. Teilnahme von Emil Juric (MeinJob365) an der KI-Masterclass von Prof. Dr. Claudia Hilker: Zeitersparnis mit KI-Tools, neue Chancen und effizientere Prozesse.
+        </p>
+        <div class="actions">
+          <a class="btn more" href="public/aktuelles/ki-masterclass.html" aria-label="Mehr erfahren zur KI-Masterclass">Mehr erfahren</a>
+          <a class="btn primary" href="https://go.hilker-consulting.de/" target="_blank" rel="noopener noreferrer" aria-label="Zur Anmeldung für die KI-Masterclass">Jetzt anmelden</a>
+        </div>
+        <div class="tags" aria-label="Tags">
+          <span class="tag">KI</span>
+          <span class="tag">Recruiting</span>
+          <span class="tag">Innovation</span>
+        </div>
+        <p class="disclaimer">
+          Hinweis: MeinJob365 ist nicht Veranstalter der Masterclass.
+        </p>
+      </div>
+    </article>
+
+    <!-- GO Event (DETALJI + ANMELDUNG) -->
     <article class="event workshop" itemscope itemtype="https://schema.org/Event">
       <div class="event-image-container">
         <img src="/images/offenbach_event.webp" alt="GO Event x Sensory-Minds" itemprop="image" width="400" height="200" />
@@ -77,133 +108,27 @@
       </div>
       <div class="content">
         <h2 itemprop="name">
-          <a href="/public/aktuelles/stammtisch_2025/goevent.html" target="_blank" rel="noopener noreferrer" itemprop="url">GO Event x Sensory-Minds</a>
+          <a href="public/aktuelles/goevent.html" itemprop="url">GO Event x Sensory-Minds</a>
         </h2>
         <div class="date-location">
-          <time datetime="2025-08-25T18:00" itemprop="startDate">25. August 2025 | 18:00-20:30 Uhr</time> – 
+          <time datetime="2025-08-25T18:00" itemprop="startDate">25. August 2025 | 18:00–20:30 Uhr</time> –
           <span itemprop="location" itemscope itemtype="https://schema.org/Place">
-            <span itemprop="name">SENSORY-MINDS, Ludwigstraße 12, 63067 Offenbach am Main, Germany</span>
+            <span itemprop="name">SENSORY-MINDS, Ludwigstraße 12, 63067 Offenbach am Main</span>
           </span>
         </div>
         <p class="description" itemprop="description">
-          Gemeinsam mit Sensory-Minds werfen wir einen Blick hinter die Kulissen eines Unternehmens, das klein angefangen hat – und heute mit internationalen Teams digitale Erlebnisse weltweit schafft.
+          Blick hinter die Kulissen: Von klein gestartet bis internationale digitale Erlebnisse – Networking & Insights mit Sensory-Minds.
         </p>
-        <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          <a href="https://www.eventbrite.de/e/go-event-x-sensory-minds-tickets-1470718110459" class="learn-more" aria-label="Mehr erfahren über GO Event x Sensory-Minds" target="_blank" rel="noopener noreferrer" itemprop="url">Mehr erfahren →</a>
-          <meta itemprop="price" content="0" />
-          <meta itemprop="priceCurrency" content="EUR" />
+        <div class="actions">
+          <a class="btn more" href="/public/aktuelles/goevent.html" aria-label="Mehr erfahren zum GO Event x Sensory-Minds">Mehr erfahren</a>
+          <a class="btn primary" href="https://www.eventbrite.de/e/go-event-x-sensory-minds-tickets-1470718110459" target="_blank" rel="noopener noreferrer" aria-label="Zur Anmeldung für GO Event x Sensory-Minds">Zur Anmeldung</a>
         </div>
         <div class="tags" aria-label="Tags">
           <span class="tag">Networking</span>
           <span class="tag">Insights</span>
         </div>
         <p class="disclaimer">
-          Veranstaltung von Gründerstadt Offenbach. 
-          <a href="https://www.eventbrite.de/e/go-event-x-sensory-minds-tickets-1470718110459" target="_blank" rel="noopener noreferrer" itemprop="organizer">Zur Anmeldung</a>. 
-          MeinJob365 ist nicht Veranstalter.
-        </p>
-      </div>
-    </article>
-
-    <!-- Stari događaji (Webinar, KI-Stammtisch, TOP CEO Leadership) -->
-    <article class="event workshop" itemscope itemtype="https://schema.org/Event">
-      <div class="event-image-container">
-        <img src="/images/webinar.webp" alt="Webinar: Vom Excel-Chaos zur automatisierten Feinplanung" itemprop="image" width="400" height="200" />
-        <span class="views-count">189 Aufrufe</span>
-      </div>
-      <div class="content">
-        <h2 itemprop="name">
-          <a href="/public/aktuelles/stammtisch_2025/webinar.html" target="_blank" rel="noopener noreferrer" itemprop="url">Webinar: Vom Excel-Chaos zur automatisierten Feinplanung</a>
-        </h2>
-        <div class="date-location">
-          <time datetime="2025-08-19T14:00" itemprop="startDate">19. August 2025 | 14:00-15:30 Uhr</time> – 
-          <span itemprop="location" itemscope itemtype="https://schema.org/VirtualLocation">
-            <span itemprop="name">Online</span>
-          </span>
-        </div>
-        <p class="description" itemprop="description">
-          Wie moderne Optimierungsverfahren und KI helfen können, die Feinplanung zu automatisieren und Excel-Probleme zu überwinden. Mit Dr. Felix J. Grumbach.
-        </p>
-        <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          <a href="/public/aktuelles/stammtisch_2025/webinar.html" class="learn-more" aria-label="Mehr erfahren über Webinar" itemprop="url">Mehr erfahren →</a>
-        </div>
-        <div class="tags" aria-label="Tags">
-          <span class="tag">Produktion</span>
-          <span class="tag">KI</span>
-          <span class="tag">Optimierung</span>
-        </div>
-        <p class="disclaimer">
-          Veranstaltung von Dr. Felix J. Grumbach (QUNEVO). 
-          <a href="https://tally.so/r/w84M0A" target="_blank" rel="noopener noreferrer" itemprop="organizer">Zur Anmeldung</a>. 
-          MeinJob365 ist nicht Veranstalter.
-        </p>
-      </div>
-    </article>
-
-    <article class="event" itemscope itemtype="https://schema.org/Event">
-      <div class="event-image-container">
-        <img src="https://meinjob365.de/images/stammtisch.webp" alt="KI-Stammtisch" itemprop="image" width="400" height="200" />
-        <span class="views-count">156 Aufrufe</span>
-      </div>
-      <div class="content">
-        <h2 itemprop="name">
-          <a href="/public/aktuelles/stammtisch_2025/stammtisch.html" itemprop="url">KI-Stammtisch</a>
-        </h2>
-        <div class="date-location">
-          <time datetime="2025-07-24T12:00" itemprop="startDate">24. Juli 2025 | 12:00-13:00 Uhr</time> – 
-          <span itemprop="location" itemscope itemtype="https://schema.org/VirtualLocation">
-            <span itemprop="name">Online</span>
-          </span>
-        </div>
-        <p class="description" itemprop="description">
-          Diskussion über aktuelle KI-Entwicklungen im Recruiting mit Experten aus der Praxis.
-        </p>
-        <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          <a href="/public/aktuelles/stammtisch_2025/stammtisch.html" class="learn-more" aria-label="Mehr erfahren über KI-Stammtisch" itemprop="url">Mehr erfahren →</a>
-        </div>
-        <div class="tags" aria-label="Tags">
-          <span class="tag">KI</span>
-          <span class="tag">Networking</span>
-          <span class="tag">Remote</span>
-        </div>
-        <p class="disclaimer">
-          Veranstaltung von Daniel Müller (Experte für Zeitarbeit & KI). 
-          <a href="https://www.linkedin.com/groups/13298429/" target="_blank" rel="noopener noreferrer" itemprop="organizer">Zur LinkedIn-Gruppe</a>. 
-          MeinJob365 ist nicht Veranstalter.
-        </p>
-      </div>
-    </article>
-
-    <article class="event workshop" itemscope itemtype="https://schema.org/Event">
-      <div class="event-image-container">
-        <img src="https://meinjob365.de/images/ceoleadership.webp" alt="TOP CEO Leadership" itemprop="image" width="400" height="200" />
-        <span class="views-count">243 Aufrufe</span>
-      </div>
-      <div class="content">
-        <h2 itemprop="name">
-          <a href="/public/aktuelles/stammtisch_2025/topceoleadership.html" itemprop="url">TOP CEO Leadership</a>
-        </h2>
-        <div class="date-location">
-          <time datetime="2025-07-23T13:00" itemprop="startDate">23. Juli 2025 | 13:00 Uhr</time> – 
-          <span itemprop="location" itemscope itemtype="https://schema.org/VirtualLocation">
-            <span itemprop="name">Online</span>
-          </span>
-        </div>
-        <p class="description" itemprop="description">
-          Das Leadership-Rezept für stressfreie Unternehmensführung mit Doreen Hegemann.
-        </p>
-        <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          <a href="/public/aktuelles/stammtisch_2025/topceoleadership.html" class="learn-more" aria-label="Mehr erfahren über TOP CEO Leadership" itemprop="url">Mehr erfahren →</a>
-        </div>
-        <div class="tags" aria-label="Tags">
-          <span class="tag">Leadership</span>
-          <span class="tag">Workshop</span>
-          <span class="tag">Kostenfrei</span>
-        </div>
-        <p class="disclaimer">
-          Veranstaltung von Doreen Hegemann. 
-          <a href="https://go.betterbusinessacademy.de/top-ceo-workshop-li/" target="_blank" rel="noopener noreferrer" itemprop="organizer">Zur Anmeldung</a>. 
-          MeinJob365 ist nicht Veranstalter.
+          Veranstaltung von Gründerstadt Offenbach. MeinJob365 ist nicht Veranstalter.
         </p>
       </div>
     </article>
@@ -212,74 +137,11 @@
 
   <footer style="margin-top: 50px; text-align: center; font-size: 0.9em; color: #666;">
     <p>
-      <a href="/disclaimer">Haftungsausschluss</a> | 
-      <a href="/datenschutz">Datenschutz</a> | 
+      <a href="/disclaimer">Haftungsausschluss</a> |
+      <a href="/datenschutz">Datenschutz</a> |
       <a href="/impressum">Impressum</a>
     </p>
     <p>© 2025 MeinJob365. Community-Veranstaltungen werden unabhängig organisiert.</p>
   </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const searchInput = document.getElementById('search-news');
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      const newsContainer = document.getElementById('news-container');
-      const events = Array.from(newsContainer.querySelectorAll('article.event'));
-
-      const originalOrder = [...events];
-
-      searchInput.addEventListener('input', () => {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        let visibleCount = 0;
-        events.forEach(event => {
-          const text = event.textContent.toLowerCase();
-          if(searchTerm === '' || text.includes(searchTerm)) {
-            event.style.display = 'flex';
-            visibleCount++;
-          } else {
-            event.style.display = 'none';
-          }
-        });
-        const noResultsElement = document.querySelector('.no-results');
-        if (visibleCount === 0 && searchTerm !== '') {
-          if (!noResultsElement) {
-            const noResults = document.createElement('div');
-            noResults.className = 'no-results';
-            noResults.innerHTML = `
-              <p>Keine Ergebnisse gefunden für "${searchTerm}"</p>
-              <button class="refresh-btn" onclick="window.location.reload()">Filter zurücksetzen</button>
-            `;
-            newsContainer.appendChild(noResults);
-          }
-        } else if (noResultsElement) {
-          noResultsElement.remove();
-        }
-      });
-
-      filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterButtons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          
-          if (btn.dataset.filter === 'popular') {
-            events.sort((a, b) => {
-              const viewsA = parseInt(a.querySelector('.views-count').textContent) || 0;
-              const viewsB = parseInt(b.querySelector('.views-count').textContent) || 0;
-              return viewsB - viewsA;
-            });
-          } else {
-            events.sort((a, b) => {
-              const dateA = new Date(a.querySelector('time').datetime);
-              const dateB = new Date(b.querySelector('time').datetime);
-              return dateB - dateA;
-            });
-          }
-          events.forEach(event => newsContainer.appendChild(event));
-        });
-      });
-
-      filterButtons[0].click();
-    });
-  </script>
 </body>
 </html>
